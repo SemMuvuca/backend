@@ -1,0 +1,44 @@
+runtime: python39 # or another supported version
+
+default_expiration: "8h"
+
+inbound_services:
+- warmup
+
+
+instance_class: F1
+
+service: totem
+
+entrypoint: hypercorn module:app
+
+env_variables:
+  BUCKET_NAME: "example-gcs-bucket"
+
+error_handlers:
+  - file: default_error.html
+
+  - error_code: over_quota
+    file: over_quota.html
+
+  - error_code: timeout
+    file: timeout.html
+
+handlers:
+# Matches requests to /images/... to files in static/images/...
+- url: /images
+  static_dir: static/images
+
+
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 5
+  max_instances: 100
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 50

@@ -1,0 +1,33 @@
+{
+    "auto-close-tag.activationOnLanguage": [
+        "*"
+    ],
+    "editor.semanticHighlighting.enabled": true,
+    "editor.wordWrap": "on",
+    "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
+    "git.autofetch": true,
+    "autoDocstring.includeExtendedSummary": true,
+    "autoDocstring.includeName": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.logLevel": "Warning",
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.autoComplete.addBrackets": true,
+    "python.disableInstallationCheck": true,
+    "python.formatting.provider": "black",
+    "python.jediMemoryLimit": -1,
+    "python.linting.banditEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pydocstyleEnabled": true,
+    "python.linting.pylamaEnabled": true,
+    "python.terminal.activateEnvInCurrentTerminal": true
+}
