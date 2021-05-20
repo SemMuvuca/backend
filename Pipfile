@@ -6,9 +6,20 @@ name = "pypi"
 [packages]
 fastapi = "<0.64.0,>=0.63.0"
 hypercorn = {extras = ["h3", "uvloop"], version = "*"}
-pyxdg = "*"
+google-cloud-datastore = "<2>=3"
 
 [dev-packages]
+flake8 = "*"
+mypy = "*"
+pycodestyle = "*"
+black = "*"
+pylint = "*"
+bandit = "*"
+pylama = "*"
+pydocstyle = "*"
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
