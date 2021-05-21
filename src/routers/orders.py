@@ -1,5 +1,8 @@
 from fastapi import APIRouter
 
+import mercadopago
+from mercadopago.config import RequestOptions
+
 router = APIRouter(
     prefix="/order",
     tags=["Order"],

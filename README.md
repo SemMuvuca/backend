@@ -16,13 +16,13 @@ Serviço e interface de aplicação do 'Sem Muvuca!'. Hospedado no App Engine (G
 - Interface ao banco de dados de produtos
 
 
-## Tech Stack
+## Tecnologias utilizadas
 
 **Framework:** FastAPI
 
 **Server:** Hypercorn (with uvloop)
 
-**Dev Tools:** Literally too many
+**Dev Tools:** OpenAPI(Swagger), ReDoc
 
 
 ## Docs
