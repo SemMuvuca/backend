@@ -32,7 +32,5 @@
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pydocstyleEnabled": true,
     "python.linting.pylamaEnabled": true,
-    // "python.pythonPath": "/home/masterberg/.local/share/virtualenvs/backend-R_oW5oBv/bin/python",
     "python.terminal.activateEnvInCurrentTerminal": true,
-    "python.pythonPath": "/home/thiago/.local/share/virtualenvs/backend-t1iFTNsM/bin/python"
 }
