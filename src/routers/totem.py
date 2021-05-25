@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from models.totem import Codes
-from helpers.helper_queries import simple_query
+from helpers.queries import simple_query
 from datastore import client as db_client
 from fastapi.encoders import jsonable_encoder
 
