@@ -4,8 +4,8 @@ import mercadopago
 from mercadopago.config import RequestOptions
 
 router = APIRouter(
-    prefix="/order",
-    tags=["Order"],
+    prefix="/mercadopago",
+    tags=["Mercado Pago"],
     dependencies=[],
     responses={404: {"description": "Not found"}},
 )
