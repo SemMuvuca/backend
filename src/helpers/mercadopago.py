@@ -1,7 +1,6 @@
-# import httpx
+import httpx
 import os
-from datastore import client as db_client
-from .queries import simple_query
+from .datastore import single_query
 
 base_url: str = (
     f"https://api.mercadopago.com/instore/qr/seller/collectors/{os.getenv('USER_ID')}"
@@ -14,11 +13,8 @@ headers = {"Authorization": f"Bearer {os.getenv('ACCESS_TOKEN')}"}
 async def create_order(products: list):
     product_list = []
     total_amount = 0.0
-
     for item in products:
-        produto = await simple_query(
-            db_client, "Produto", "barcode", "=", item["ean13_code"]
-        )
+        produto = await single_query("Produto", "barcode", item["ean13_code"])
         product_list.append(
             {
                 "title": produto["title"],
@@ -31,7 +27,6 @@ async def create_order(products: list):
             }
         )
         total_amount += produto["unit_price"] * item["quantity"]
-
     order = {
         "external_reference": 12345,
         "title": "Product order",
@@ -45,14 +40,14 @@ async def create_order(products: list):
     print(order)
 
 
-async def status_order():
+async def get_status_order():
     with httpx.Client(headers=headers) as client:
         return client.get(create_order_url)
 
 
-create_order(
-    [
-        {"ean13_code": "7891991000833", "quantity": 2},
-        {"ean13_code": "7894900940398", "quantity": 3},
-    ]
-)
+# create_order(
+#     [
+#         {"ean13_code": "7891991000833", "quantity": 2},
+#         {"ean13_code": "7894900940398", "quantity": 3},
+#     ]
+# )
