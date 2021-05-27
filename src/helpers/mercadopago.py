@@ -1,6 +1,7 @@
 import httpx
 import os
-from .datastore import single_query
+from datastore import single_query
+from fastapi.encoders import jsonable_encoder
 
 base_url: str = (
     f"https://api.mercadopago.com/instore/qr/seller/collectors/{os.getenv('USER_ID')}"
@@ -14,13 +15,13 @@ async def create_order(products: list):
     product_list = []
     total_amount = 0.0
     for item in products:
-        produto = await single_query("Produto", "barcode", item["ean13_code"])
+        produto =  await single_query("Produto", "barcode", item["ean13_code"])
         product_list.append(
             {
                 "title": produto["title"],
                 "description": produto["description"],
                 "category": produto["category"],
-                "unit_measure": produto["unit"],
+                "unit_measure": produto["unit_measure"],
                 "unit_price": produto["unit_price"],
                 "quantity": item["quantity"],
                 "total_amount": produto["unit_price"] * item["quantity"],
@@ -36,8 +37,8 @@ async def create_order(products: list):
         "items": product_list,
     }
     # with httpx.Client(headers=headers) as client:
-    #     return client.put(create_order_url)
-    print(order)
+    #     return client.put(url=create_order_url, data=order)
+    return jsonable_encoder(order)
 
 
 async def get_status_order():
@@ -45,9 +46,9 @@ async def get_status_order():
         return client.get(create_order_url)
 
 
-# create_order(
+# print(create_order(
 #     [
 #         {"ean13_code": "7891991000833", "quantity": 2},
 #         {"ean13_code": "7894900940398", "quantity": 3},
 #     ]
-# )
+# ))
