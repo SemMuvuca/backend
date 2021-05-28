@@ -1,4 +1,7 @@
 from fastapi import APIRouter
+from helpers.datastore import single_query
+from fastapi.encoders import jsonable_encoder
+
 
 router = APIRouter(
     prefix="/scan",
@@ -10,7 +13,8 @@ router = APIRouter(
 
 @router.get("/store/{code}")
 async def scan_store(code: int):
-    return [{"Product": "Rick", "Brand": "Morty", "Price": 1, "Weight": 10}]
+    return jsonable_encoder(await single_query("Produto", "barcode", code))
+
 
 
 @router.get("/openfood/{code}")

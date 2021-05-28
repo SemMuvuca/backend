@@ -1,6 +1,6 @@
 import httpx
 import os
-from datastore import single_query
+from .datastore import single_query
 from fastapi.encoders import jsonable_encoder
 
 base_url: str = (
@@ -15,7 +15,7 @@ async def create_order(products: list):
     product_list = []
     total_amount = 0.0
     for item in products:
-        produto =  await single_query("Produto", "barcode", item["ean13_code"])
+        produto = await single_query("Produto", "barcode", item["ean13_code"])
         product_list.append(
             {
                 "title": produto["title"],
@@ -36,19 +36,10 @@ async def create_order(products: list):
         "total_amount": total_amount,
         "items": product_list,
     }
-    # with httpx.Client(headers=headers) as client:
-    #     return client.put(url=create_order_url, data=order)
-    return jsonable_encoder(order)
+    with httpx.Client(headers=headers) as client:
+        return client.put(url=create_order_url, data=jsonable_encoder(order))
 
 
 async def get_status_order():
     with httpx.Client(headers=headers) as client:
         return client.get(create_order_url)
-
-
-# print(create_order(
-#     [
-#         {"ean13_code": "7891991000833", "quantity": 2},
-#         {"ean13_code": "7894900940398", "quantity": 3},
-#     ]
-# ))

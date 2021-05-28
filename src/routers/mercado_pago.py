@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, status
 
 router = APIRouter(
     prefix="/mercadopago",
@@ -8,6 +8,6 @@ router = APIRouter(
 )
 
 
-@router.get("/add/{code}")
-async def scan_store(code: int):
-    return [{"Product": "Rick", "Brand": "Morty", "Price": 1, "Weight": 10}]
+@router.post("/ipn", status_code=status.HTTP_201_CREATED)
+async def notification(topic: str, id: int):
+    print(f"Notifying {topic} on {id}")
