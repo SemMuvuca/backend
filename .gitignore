@@ -773,7 +773,6 @@ modules.xml
 .ionide
 
 ### vscode ###
-.vscode/settings.json
 !.vscode/extensions.json
 
 ### Windows ###
