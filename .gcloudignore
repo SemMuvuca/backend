@@ -12,7 +12,8 @@
 # below:
 .git
 .gitignore
-
+Pipfile
+Pipfile.lock
 !include:.gitignore
 
 

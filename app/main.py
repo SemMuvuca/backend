@@ -1,14 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# from .dependencies import get_query_token, get_token_header
-# from .internal import admin
-from routers import scan, mercado_pago, totem
+from routers import scan, mercado_pago, totem, warmup
 
 origins = ["*"]
-
 app = FastAPI()
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -16,6 +12,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.include_router(warmup.router)
 app.include_router(scan.router)
-app.include_router(mercado_pago.router)
 app.include_router(totem.router)
+app.include_router(mercado_pago.router)
