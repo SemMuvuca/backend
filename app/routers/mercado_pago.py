@@ -19,4 +19,4 @@ async def notification(topic: str, id: int):
 
 @router.put("/create_order")
 async def new_order(checkout_list: checkout_list):
-    create_order(jsonable_encoder(checkout_list))
+    await create_order(jsonable_encoder(checkout_list))
