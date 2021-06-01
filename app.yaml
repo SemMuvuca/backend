@@ -2,43 +2,47 @@ runtime: python39 # or another supported version
 
 default_expiration: "8h"
 
-inbound_services:
-- warmup
+# inbound_services:
+# - warmup
 
 
 instance_class: F1
 
-service: totem
+service: default
 
-entrypoint: hypercorn module:app
-
+entrypoint: hypercorn src/main:app -c hypercorn.toml
 env_variables:
   BUCKET_NAME: "example-gcs-bucket"
-
-error_handlers:
-  - file: default_error.html
-
-  - error_code: over_quota
-    file: over_quota.html
-
-  - error_code: timeout
-    file: timeout.html
-
-handlers:
-# Matches requests to /images/... to files in static/images/...
-- url: /images
-  static_dir: static/images
+  USER_ID: "737246994"
+  EXTERNAL_STORE_ID: "STORE002"
+  EXTERNAL_POS_ID: "CAIXA0002"
+  ACCESS_TOKEN: "TEST-8777561415085289-040116-7f497da405df9c5128157c84f8437639-737246994"
 
 
-- url: /.*
-  secure: always
-  redirect_http_response_code: 301
-  script: auto
+# error_handlers:
+#   - file: default_error.html
 
-automatic_scaling:
-  target_cpu_utilization: 0.65
-  min_instances: 5
-  max_instances: 100
-  min_pending_latency: 30ms
-  max_pending_latency: automatic
-  max_concurrent_requests: 50
+#   - error_code: over_quota
+#     file: over_quota.html
+
+#   - error_code: timeout
+#     file: timeout.html
+
+# handlers:
+# # Matches requests to /images/... to files in static/images/...
+# - url: /images
+#   static_dir: static/images
+
+
+# - url: /.*
+#   secure: always
+#   redirect_http_response_code: 301
+#   script: auto
+
+# automatic_scaling:
+#   target_cpu_utilization: 0.65
+#   min_instances: 5
+#   max_instances: 100
+#   min_pending_latency: 30ms
+#   max_pending_latency: automatic
+#   max_concurrent_requests: 50
