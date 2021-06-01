@@ -2,7 +2,7 @@ from fastapi import APIRouter, status
 from fastapi.encoders import jsonable_encoder
 
 from models.cart import checkout_list
-from services.mercadopago import create_order
+from services.create_order import create_order
 
 router = APIRouter(
     prefix="/mercadopago",
