@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sem-muvuca",
+  "private_key_id": "bb4423604441c36dab886246e5e16919a32a2646",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDO9D+v8Hnou5qM\nbyUYZkPaFA8mY1/a57JrUOfTNfLCHCnL8z3vxljZVrImqms7wEmQE9rsiND/N4oG\npbxMbrlLCdRBqQC0sAWE6bsd1Va+61TSVdeZjx8PT37pji1x0Q4VFWW/fnp/66+g\nJiPVbpvYZHct58072gmXJbU5ddSmH1jda9gsbvwUZh9el1DjIUh5fD9klEx/b4oL\n/3puns/ufxLCiyCtwYMgWcMG/pSGrNHe4PCB0dtfvjr0KNVs46Mn8A2mW8fMJIrr\n+pX8MGf8ivFl3ficpVB8h3MT4kNlBUnLVzSjedSC5ci5s/hOyy47/Ik4fx2/Pkaj\nqQDE/RFBAgMBAAECggEAJci7uPZNd6OK0bF4IxaGtFHduztA9LFBJq04ihwLJIvq\nSKFyES0UKygUMhGCrv/KHns1iOJoz/PWqCSJtqWvgEb84PkHVzXc6BmZT1bUNdq2\n24kPKirSd6PirqcF3oYVzV0g/L+Ng33nDHTyLWU6oF0lUjUESDVkc1tP1TwRVTvH\nIVb8AjesBqf8JAuHM04n06AR/yZcf1aKlqn257A77jQ08tynCveARw/th4JArbmJ\naOM2XT+k5ceJqdbuPEWjkjA3Iv6dtGPu/bhd9DNZfBrlHcgq++kFMiR5Tyxr5JJJ\nhDOgqvsGg1s1gF/BK/8NhY5m4v/VaVAWkTJ6kxsJnQKBgQD30w7l4vmJFc9axi/L\n3LXSCW9eVcVMw3kar5yUMV05BeaAHGWSpTuCP2ywpO7fnVdWavvd+OkV9r/ywpYv\n7ezzLKbdvN00KCQy5wyB/TDxDcmA6vhbGozHc/TTHOiDUR4tW2UxvTg5nD3oO+Rh\nWRp+cuWN56J/oDyhhPAJbObW3QKBgQDVyAeliwaw9tqzzKSIo5vUSDmla0rzDaIK\n+EQT9o1wR9xl43q/X6ZEhLq3Tf3sViE0j6A3i0zNO1OQmnCZf+LlESauJ+YrH98s\nR1VT+4v5ZDJq9i5kGPxsycjeSTxMhvv0HN1G190iB+TZ57/icpivpOP8vERLuYdQ\njIyFuPvTtQKBgQCNQXztZalMDOVq3SojLgNo273h7EuQTJ67qjs6cMStGwLeJNF0\ne7/mppYiPXB2fu1oMYSsahMZVNLl4SnP2fLETMA0BVGkR/kSFoYXlaSO0Yf4dnXn\nH8P8b8itiH2zU8o6miyc5DinBbp3o6OyJSKnzn+vmccSrdfBTM+w36TX9QKBgF6l\nk7UX6xt3/vWxeXrBLKF8ZIE3ElSvSXmf1swb0RzPw+UcJGEL4NnfBadYET6MF2Fk\n4SMWOid2x5Vyur1K4FJYGI7sPTwEfVLmNgHbkWoVkTjHy1wnr8IeSB8Zv2eGL5Ax\nI0pVEaMaaZiLwOlpoO3Ki+F+HKKF/kGMKD6f2mYtAoGBAJIxHAqqDjsxyc85noDO\nfuO3LuYxTXVTTt63X9o4k7JVdmn9VdzFUkh2gh/wof5y0E7u+e06JEhGgWvGFUUE\nZigjWhfK6jlzRr0qpwwIvUYRoZpvmKVUYtiM+OuwPOrMSf78zZ0yDps1Q4ndBvs0\n0oxsf8kwSsiuuun5NAtXGWx5\n-----END PRIVATE KEY-----\n",
+  "client_email": "local-access-datastore@sem-muvuca.iam.gserviceaccount.com",
+  "client_id": "107293639574138962785",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/local-access-datastore%40sem-muvuca.iam.gserviceaccount.com"
+}

@@ -24,7 +24,7 @@ async def create_order(products):
         "title": "Product order",
         "description": "quenga",
         "notification_url": "sem-muvuca.rj.r.appspot.com/mercadopago/ipn",
-        "total_amount": total_amount,
+        "total_amount": float("{0:.2f}".format(total_amount)),
         "items": product_list,
     }
     print(order)
