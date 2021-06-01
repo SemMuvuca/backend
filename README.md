@@ -29,6 +29,9 @@ Serviço e interface de aplicação do 'Sem Muvuca!'. Hospedado no App Engine (G
 
 [Documentation](https://linktodocumentation)
 
+## Authors
+ - Thiago Augusto Souza Silva
+ - Daniel Berg Souza Lima
 
 ## Acknowledgements
 
