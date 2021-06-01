@@ -10,7 +10,8 @@ instance_class: F1
 
 service: default
 
-entrypoint: hypercorn src/main:app -c hypercorn.toml
+entrypoint: hypercorn src/main:app -c server/hypercorn.toml
+
 env_variables:
   BUCKET_NAME: "example-gcs-bucket"
   USER_ID: "737246994"
