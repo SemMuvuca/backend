@@ -13,10 +13,10 @@ get_order_url: str = f"{base_url}/pos/{os.getenv('EXTERNAL_POS_ID')}/orders"
 headers = {"Authorization": f"Bearer {os.getenv('ACCESS_TOKEN')}"}
 
 
-async def create_order(products: list):
+async def create_order(products):
     product_list = []
     total_amount = 0.0
-    for item in products:
+    for item in products["products_quantity"]:
         produto = await get_product(item["ean13_code"])
         product_list.append(
             {
