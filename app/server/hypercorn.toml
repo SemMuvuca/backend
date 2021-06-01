@@ -1,5 +1,0 @@
-# application_path = "./src/"
-bind = "0.0.0.0:8080"
-include_server_header = false
-worker_class = "uvloop"
-workers = 1

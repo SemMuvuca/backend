@@ -1,7 +1,9 @@
-import httpx
 import os
-from database.datastore import get_product
+
 from fastapi.encoders import jsonable_encoder
+import httpx
+
+from database.datastore import get_product
 
 base_url: str = (
     f"https://api.mercadopago.com/instore/qr/seller/collectors/{os.getenv('USER_ID')}"
