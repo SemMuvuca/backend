@@ -41,4 +41,3 @@ async def create_order(products):
         print(r.request.headers)
         print(r)
         print(r.text)
-
