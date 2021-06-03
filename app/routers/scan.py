@@ -2,7 +2,6 @@ from fastapi import APIRouter
 from database.datastore import get_product
 from fastapi.encoders import jsonable_encoder
 
-# from fastapi.encoders import
 
 router = APIRouter(
     prefix="/scan",

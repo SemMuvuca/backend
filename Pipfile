@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "<0.64.0,>=0.63.0"
+fastapi = {extras = ["orjson"], version = "*"}
 hypercorn = {extras = ["h3", "uvloop"], version = "*"}
 google-cloud-datastore = "<2>=3"
 mercadopago = "*"

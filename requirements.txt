@@ -1,0 +1,17 @@
+################################################################################
+# This requirements file has been automatically generated from `Pipfile` with
+# `pipenv-to-requirements`
+#
+#
+# This has been done to maintain backward compatibility with tools and services
+# that do not support `Pipfile` yet.
+#
+# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
+# `Pipfile.lock` and then regenerate `requirements*.txt`.
+################################################################################
+
+fastapi<0.64.0,>=0.63.0
+google-cloud-datastore<2>=3
+httpx[brotli, http2]
+hypercorn[h3, uvloop]
+mercadopago

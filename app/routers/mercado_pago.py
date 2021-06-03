@@ -1,8 +1,9 @@
 from fastapi import APIRouter, status
 from fastapi.encoders import jsonable_encoder
+import httpx
 
 from models.cart import checkout_list
-from services.mercadopago import create_order
+from services.mercado_pago import create_order
 
 router = APIRouter(
     prefix="/mercadopago",
@@ -20,3 +21,15 @@ async def notification(topic: str, id: int):
 @router.put("/create_order")
 async def new_order(checkout_list: checkout_list):
     await create_order(jsonable_encoder(checkout_list))
+
+
+@router.delete("/delete_order")
+async def delete_order():
+    with httpx.Client() as client:
+        headers = {
+            "Authorization": "Bearer APP_USR-2350858020961763-060102-0a86961866fa461c4a9aae7326871d92-235427759",
+        }
+        client.delete(
+            url="https://api.mercadopago.com/instore/qr/seller/collectors/235427759/pos/CAIXA8080/orders",
+            headers=headers,
+        )
