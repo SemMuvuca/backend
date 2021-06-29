@@ -1,8 +1,6 @@
 from fastapi import APIRouter, status
-from fastapi.encoders import jsonable_encoder
 import httpx
 
-from models.cart import checkout_list
 from services.mercado_pago import create_order
 
 router = APIRouter(
@@ -13,14 +11,14 @@ router = APIRouter(
 )
 
 
-@router.post("/ipn", status_code=status.HTTP_201_CREATED)
-async def notification(topic: str, id: int):
-    print(f"Notifying {topic} on {id}")
+# @router.post("/ipn", status_code=status.HTTP_201_CREATED)
+# async def notification(topic: str, id: int):
+#     print(f"Notifying {topic} on {id}")
 
 
-@router.put("/create_order")
-async def new_order(checkout_list: checkout_list):
-    await create_order(jsonable_encoder(checkout_list))
+# @router.put("/create_order")
+# async def new_order(checkout_list: checkout_list):
+#     await create_order(jsonable_encoder(checkout_list))
 
 
 @router.delete("/delete_order")
