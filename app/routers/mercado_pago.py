@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status
 import httpx
 
-from services.mercado_pago import create_order
+# from services.mercado_pago import create_order
 
 router = APIRouter(
     prefix="/mercadopago",
