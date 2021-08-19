@@ -827,3 +827,6 @@ zsdoc/data
 !/tests/_output/.gitkeep
 
 # End of https://www.toptal.com/developers/gitignore/api/ssh,zsh,code,macos,linux,pydev,flask,python,opencv,vscode,archive,windows,pycharm,archives,compressed,powershell,pycharm+iml,pycharm+all,compression,visualstudiocode,jupyternotebooks,compressedarchive,git
+
+# GCP's Key:
+sem-muvuca.json
