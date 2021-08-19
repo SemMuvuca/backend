@@ -10,14 +10,14 @@ instance_class: F1
 
 service: default
 
-entrypoint: hypercorn src/main:app -c server/hypercorn.toml
+entrypoint: hypercorn app/main:app -c server/hypercorn.toml
 
 env_variables:
   BUCKET_NAME: "example-gcs-bucket"
-  USER_ID: "737246994"
-  EXTERNAL_STORE_ID: "STORE002"
-  EXTERNAL_POS_ID: "CAIXA0002"
-  ACCESS_TOKEN: "TEST-8777561415085289-040116-7f497da405df9c5128157c84f8437639-737246994"
+  USER_ID: "235427759"
+  EXTERNAL_STORE_ID: "LOJA1337"
+  EXTERNAL_POS_ID: "CAIXA8080"
+  ACCESS_TOKEN: "APP_USR-2350858020961763-060102-0a86961866fa461c4a9aae7326871d92-235427759"
 
 
 # error_handlers:
