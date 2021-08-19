@@ -1,0 +1,1 @@
+from msgpack_asgi import MessagePackMiddleware as MessagePackMiddleware

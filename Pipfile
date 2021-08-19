@@ -4,11 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "<0.64.0,>=0.63.0"
+fastapi = {extras = ["all"], version = "*"}
 hypercorn = {extras = ["h3", "uvloop"], version = "*"}
-google-cloud-datastore = "<2>=3"
 mercadopago = "*"
 httpx = {extras = ["brotli", "http2"], version = "*"}
+msgpack-asgi = "*"
+brotli-asgi = "*"
+google-cloud-firestore = "*"
 
 [dev-packages]
 flake8 = "*"
@@ -19,6 +21,7 @@ pylint = "*"
 bandit = "*"
 pylama = "*"
 pydocstyle = "*"
+fastapi-profiler = "*"
 
 [requires]
 python_version = "3.9"

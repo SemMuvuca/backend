@@ -1,8 +1,5 @@
-from fastapi import APIRouter
-from database.datastore import get_product
-from fastapi.encoders import jsonable_encoder
-
-# from fastapi.encoders import
+from fastapi import APIRouter, Response, status
+from database.firestore import get_product
 
 router = APIRouter(
     prefix="/scan",
@@ -12,15 +9,17 @@ router = APIRouter(
 )
 
 
-@router.get("/store/{ean_13}")
-async def scan_store(ean_13: str):
-    return jsonable_encoder(get_product(ean_13))
+@router.get("/{ean_13}", status_code=status.HTTP_200_OK)
+async def scan_store(ean_13: int, response: Response):
+    requested_product = get_product(ean_13)
+    if requested_product is None:
+        response.status_code = status.HTTP_404_NOT_FOUND
+    return requested_product
 
 
 # @router.get("/openfood/{code}")
 # async def scan_openfood(code: int):
 #     return [{"Product": "Rick", "Brand": "Morty", "Price": 1, "Weight": 10}]
-
 
 # @router.get("/monster/{code}")
 # async def scan_monster(code: int):

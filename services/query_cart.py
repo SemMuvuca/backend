@@ -1,4 +1,4 @@
-from database.datastore import get_product
+from database.firestore import get_product
 
 
 async def query_cart(order_list):

@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 
-from database.datastore import get_product
+from database.firestore import get_product
 from models.cart import checkout_list
 
 router = APIRouter(
