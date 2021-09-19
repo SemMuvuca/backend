@@ -27,14 +27,14 @@ register_tortoise(app, config=TORTOISE_ORM)
 
 # Tortoise ORM Model
 class Item(Model):
-    product_name = fields.IntField(null=False, description=f"Name of the product")
+    product_name = fields.TextField(null=False, description=f"Name of the product")
     quantity = fields.DecimalField(
         null=False,
         max_digits=10,
         decimal_places=2,
         description=f"Volume or weight value",
     )
-    code = fields.TextField(null=False, description=f"EAN13 code")
+    code = fields.IntField(null=False, description=f"EAN13 code")
     created_at = fields.DatetimeField(
         null=False,
         auto_now_add=True,
