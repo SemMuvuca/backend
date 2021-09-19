@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sem-muvuca-323320",
+  "private_key_id": "373cb5b9706da29f45a98016ef370227e823fe3a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDcBch6RON9rGAA\nR8gpIdnLqryr9P54fOZ8/1rkQK23Yz0Uaj6Krsw9ycv7LWZpzCdz00Xo+TYZ0drM\nUVshYJld2SmBROTcZKlfGrRrEkkpMOu72lOEFAH7qkWd2NoHrXi/Bz2O/2HBT7gg\nS1MuXZC1/SYAh0kDVKdDNiNr9m3KyAJAMSJmPWTIQc+e3WGML2vObVK3ldtI2Nk4\ny8ACeVo3fDmYsIlctrwBnME+YgiL8FFArj+wbOxF/03Jlj0CIujU7XKv+HVoR4PQ\nCNIVDLkFllFZWQgfwyiitjwBEEYi0qvSaKZud7eG7p7ZXytzmZKj5CISj7aISkwX\nF89BDJi9AgMBAAECggEABN/V7KuF1LA5O9hbQ8BqiE7chi/tZH/Aq9umYlclruHl\npdDV8nf9fo+8oD048lAVC0WOqQlYXJZGTO98EtwgGbDb1zxoMflchtOOVEiGUwGX\nJcUoKecD+KGkw2LDlcoojVoPz/d/BwU8NLvAEhwwvm9nMTma18mMBeFEEKC+SiQK\nSTLXA7zFfeSKaaqEr/sW2QM23CLTvqg5sGddt4HkUX5646nglY7uTtim3uCvCBZ1\nq11ofR+2hLXxphizDmotl1SGyupfrWlDSA8Chml2s4CSeLWDnIj5d2LvHQ7AthvA\n5ruhq4bOVudB+qrU2jFWh1/S4KPBZ+X9398g7AWskQKBgQD0MSs54eOSR48WlARI\n2nQaAPPV6pYexbdCSTi+PN2TaSc2Gxq0SfUwbHTwCAUnQIF3Lg/Suf8EYAeai4WB\n2YIb2iX3n1gYgjZoIyf8AW2eYMVfPqpXCmAO2T4t++9m+1YisdYKFSc7mxYRv8XM\nPd9Q4qUFQvYJhQ20tW2n5OqY2QKBgQDmqWwsBD0ctGzGgxff9FUH6AR8Z2xD4Ftz\nLEEMp9OPVoXAaRXHoaBDB9v2CmD8mBlKfY+xgqyrJtMw+DdaiE+xMKRfCkjouUG0\nEMP1MYKFKkcsYavwAPQ646cLUuRLGseqB/PZ3+L1q0cbeXr9B76tv8YYMqJBLtvd\n2IEW/QawhQKBgQChn52drQ5D9osVhZikY7qur2y0bJU5/uFBxVcCSyTY+aNTY3M0\nWzMm/tITQSuwBDjsmhctAaBx0+GUf7446K7+IlA46kWTyzOZj5Nab9OPHTvlw4NZ\nIuvbSByosPSOs9IaGpyxhbi28foUe1q+yUDyt2BD8EMKn/8nWWIf2xsPWQKBgQCz\nxqKnn9odsEYDZpNKGr3XPq+YYmdQc+Hy3zAH9BoA4te2QnEWOdOVyt9WYXp8BPPZ\nSgmfuZBoiQcbaKqD5i/uk1HZPUPcFt+tv09roF3w+iWk4q9GjQfNijdcrQt/ueya\nij41trjG7uqp8EG6SroD4686luQ9V49H1gGu8CCxnQKBgGGzZ+APqaSVsIMcviHe\nOb110sKxxDqWqg87c76Q6Lf7H0ll0qTdMB7COrxqP1zs2k4LnVfoI2R48v2GZUqu\ngEXYToo9LkOjBvwJ8SOeE5Dxcc0VdiymYpPV7zavL1SsQU6PgA7B5H4jKqxzwhaW\nRo4uxXEGe9o6ACyA38RyM1BU\n-----END PRIVATE KEY-----\n",
+  "client_email": "default@sem-muvuca-323320.iam.gserviceaccount.com",
+  "client_id": "116731431425445792878",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/default%40sem-muvuca-323320.iam.gserviceaccount.com"
+}

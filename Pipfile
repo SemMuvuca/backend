@@ -8,9 +8,11 @@ fastapi = {extras = ["all"], version = "*"}
 hypercorn = {extras = ["h3", "uvloop"], version = "*"}
 mercadopago = "*"
 httpx = {extras = ["brotli", "http2"], version = "*"}
-msgpack-asgi = "*"
-brotli-asgi = "*"
-google-cloud-firestore = "*"
+# msgpack-asgi = "*"
+# brotli-asgi = "*"
+# google-cloud-firestore = "*"
+fastapi-crudrouter = "*"
+fastapi-users = {extras = ["tortoise-orm"], version = "*"}
 
 [dev-packages]
 flake8 = "*"
@@ -21,7 +23,6 @@ pylint = "*"
 bandit = "*"
 pylama = "*"
 pydocstyle = "*"
-fastapi-profiler = "*"
 
 [requires]
 python_version = "3.9"

@@ -1,0 +1,39 @@
+[tool.isort]
+profile = 'black'
+
+[tool.pylint.messages_control]
+disable = "C0330, C0326"
+
+[tool.pylint.format]
+max-line-length = "88"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+files = "app, test"
+ignore_missing_imports=true
+
+[tool.pyright]
+include = ["src"]
+exclude = ["**/node_modules",
+    "**/__pycache__",
+    "src/experimental",
+    "src/typestubs"
+]
+ignore = ["src/oldstuff"]
+stubPath = "src/stubs"
+venv = "env39"
+
+reportMissingImports = true
+reportMissingTypeStubs = false
+
+pythonVersion = "3.9"
+pythonPlatform = "Linux"
+
+executionEnvironments = [
+  { root = "src/web", pythonVersion = "3.5", pythonPlatform = "Windows", extraPaths = [ "src/service_libs" ] },
+  { root = "src/sdk", pythonVersion = "3.0", extraPaths = [ "src/backend" ] },
+  { root = "src/tests", extraPaths = ["src/tests/e2e", "src/sdk" ]},
+  { root = "app" }
+]
