@@ -1,9 +1,8 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi_users import FastAPIUsers, models
 from fastapi.responses import ORJSONResponse
 from tortoise.contrib.fastapi import register_tortoise
-from routers import mercado_pago, warmup
+from routers import mercado_pago, warmup, item
 from database.SQL import DATABASE_URL, user_db
 from models.user import User, UserCreate, UserUpdate, UserDB
 from services.JWT import jwt_authentication, SECRET
@@ -14,14 +13,10 @@ app = FastAPI(
     description="Python/FastAPI based service for all 'Sem Muvuca' functionality.",
     default_response_class=ORJSONResponse,
 )
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["*"],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
+
 app.include_router(warmup.router)
+app.include_router(item.router)
+
 
 # register_tortoise(
 #     app,

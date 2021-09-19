@@ -1,19 +1,21 @@
 from fastapi import FastAPI
-from fastapi_crudrouter.core.tortoise import TortoiseCRUDRouter
+from fastapi.middleware.cors import CORSMiddleware
+from tortoise import Tortoise
 from tortoise.contrib.fastapi import register_tortoise
-from tortoise.contrib.pydantic import pydantic_model_creator
-from tortoise.models import Model
-from tortoise import fields, Tortoise
+
+from routers import item
+
 
 TORTOISE_ORM = {
     "connections": {"default": "sqlite://./test.db"},
     "apps": {
         "models": {
-            "models": ["example"],
+            "models": ["models.database.itemSchema"],
             "default_connection": "default",
         },
     },
 }
+
 
 # Create Database Tables
 async def init():
@@ -22,48 +24,15 @@ async def init():
 
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 register_tortoise(app, config=TORTOISE_ORM)
 
 
-# Tortoise ORM Model
-class Item(Model):
-    product_name = fields.TextField(null=False, description=f"Name of the product")
-    quantity = fields.DecimalField(
-        null=False,
-        max_digits=10,
-        decimal_places=2,
-        description=f"Volume or weight value",
-    )
-    code = fields.IntField(null=False, description=f"EAN13 code")
-    created_at = fields.DatetimeField(
-        null=False,
-        auto_now_add=True,
-        editable=False,
-        description=f"Day when the item was inserted on the database",
-    )
-    modified_at = fields.DatetimeField(
-        null=False,
-        auto_now=True,
-        editable=True,
-        description=f"Day when the item was inserted on the database",
-    )
-
-
-# Pydantic schema
-TestSchema = pydantic_model_creator(Item, name=f"{Item.__name__}Schema")
-TestSchemaCreate = pydantic_model_creator(
-    Item, name=f"{Item.__name__}SchemaCreate", exclude_readonly=True
-)
-
-# Make your FastAPI Router from your Pydantic schema and Tortoise Model
-router = TortoiseCRUDRouter(
-    schema=TestSchema,
-    create_schema=TestSchemaCreate,
-    db_model=Item,
-    prefix=Item.__name__,
-    delete_all_route=False,
-    get_all_route=False,
-)
-
 # Add it to your app
-app.include_router(router)
+app.include_router(item.router)
